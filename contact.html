@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Intuitivetouch222</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ivory: #FAF7F2;
+            --cream: #F5F0E8;
+            --beige: #E8DFD3;
+            --sage: #9CAF88;
+            --sage-dark: #7A9166;
+            --taupe: #A69080;
+            --text-dark: #3D3632;
+            --text-soft: #6B625A;
+            --white: #FFFFFF;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Nunito Sans', sans-serif; background: var(--ivory); color: var(--text-dark); line-height: 1.7; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 500; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        
+        nav { background: var(--white); padding: 20px 0; position: fixed; width: 100%; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.05); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--sage-dark); text-decoration: none; }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { color: var(--text-soft); text-decoration: none; font-size: 15px; }
+        .nav-links a:hover { color: var(--sage-dark); }
+        .nav-cta { background: var(--sage); color: var(--white); padding: 10px 24px; border-radius: 30px; text-decoration: none; font-size: 14px; }
+        .nav-cta:hover { background: var(--sage-dark); }
+
+        .hero { padding: 180px 0 80px; background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%); text-align: center; }
+        .hero h1 { font-size: 52px; color: var(--text-dark); margin-bottom: 16px; }
+        .hero p { font-size: 20px; color: var(--text-soft); max-width: 600px; margin: 0 auto; }
+        
+        .btn-primary { background: var(--sage); color: var(--white); padding: 16px 40px; border-radius: 40px; text-decoration: none; font-size: 16px; font-weight: 500; display: inline-block; transition: all 0.3s; }
+        .btn-primary:hover { background: var(--sage-dark); transform: translateY(-2px); }
+
+        section { padding: 80px 0; }
+        section:nth-child(even) { background: var(--white); }
+
+        .contact-methods { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
+        .method-card { padding: 40px 20px; background: var(--cream); border-radius: 20px; }
+        .method-icon { font-size: 36px; margin-bottom: 16px; }
+        .method-card h4 { font-size: 20px; color: var(--text-dark); margin-bottom: 10px; }
+        .method-card p { font-size: 15px; color: var(--text-soft); }
+        .method-card a { color: var(--sage-dark); text-decoration: none; }
+
+        .location-section h2 { text-align: center; margin-bottom: 30px; }
+        .map-placeholder { background: var(--cream); border-radius: 24px; padding: 80px; text-align: center; }
+        .map-placeholder p { font-size: 18px; color: var(--text-soft); }
+        
+        .social-section { text-align: center; background: var(--cream); }
+        .social-section h2 { margin-bottom: 30px; }
+        .social-links { display: flex; gap: 20px; justify-content: center; }
+        .social-link { background: var(--white); padding: 16px 32px; border-radius: 30px; color: var(--text-soft); text-decoration: none; font-size: 15px; transition: all 0.3s; }
+        .social-link:hover { background: var(--sage); color: var(--white); }
+
+        .form-section { max-width: 600px; margin: 0 auto; }
+        .form-section h2 { text-align: center; margin-bottom: 40px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 15px; color: var(--text-soft); margin-bottom: 8px; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 16px; border: 2px solid var(--beige); border-radius: 12px; font-family: inherit; font-size: 16px; background: var(--white); }
+        .form-group textarea { min-height: 150px; }
+
+        .cta-section { background: linear-gradient(180deg, var(--sage) 0%, var(--sage-dark) 100%); text-align: center; color: var(--white); padding: 80px 0; }
+        .cta-section h2 { color: var(--white); font-size: 42px; margin-bottom: 16px; }
+        .cta-section p { font-size: 18px; opacity: 0.9; margin-bottom: 30px; }
+        .cta-section .btn-primary { background: var(--white); color: var(--sage-dark); }
+
+        footer { background: var(--text-dark); color: var(--cream); padding: 50px 0 25px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; margin-bottom: 30px; }
+        .footer-brand .logo { color: var(--cream); margin-bottom: 15px; display: block; }
+        .footer-brand p { font-size: 14px; opacity: 0.8; }
+        .footer-col h4 { font-size: 16px; margin-bottom: 15px; color: var(--white); }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 10px; }
+        .footer-col a { color: var(--cream); opacity: 0.7; text-decoration: none; font-size: 14px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; font-size: 13px; opacity: 0.7; }
+
+        @media (max-width: 768px) {
+            .contact-methods { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Intuitivetouch222</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="booking.html">Book</a></li>
+            </ul>
+            <a href="booking.html" class="nav-cta">Book Now</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Get in Touch</h1>
+            <p>We'd love to hear from you. Whether you're ready to book or have questions, we're here to help.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="contact-methods">
+                <div class="method-card">
+                    <div class="method-icon">📞</div>
+                    <h4>Phone</h4>
+                    <p><a href="tel:+1234567890">(123) 456-7890</a></p>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">✉️</div>
+                    <h4>Email</h4>
+                    <p><a href="mailto:hello@intuitivetouch222.com">hello@intuitivetouch222.com</a></p>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">📍</div>
+                    <h4>Location</h4>
+                    <p>[Your Address Here]<br>[City, State]</p>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">🕐</div>
+                    <h4>Hours</h4>
+                    <p>Mon-Fri: 9am-7pm<br>Sat: 9am-5pm</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="location-section">
+        <div class="container">
+            <h2>Find Us</h2>
+            <div class="map-placeholder">
+                <p>📍 [Your Map Embed Here]<br><br>Easy parking available. Come to the entrance and we'll welcome you inside.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-section">
+        <div class="container">
+            <h2>Send Us a Message</h2>
+            <form>
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label>What can we help with?</label>
+                    <select>
+                        <option>General inquiry</option>
+                        <option>Book an appointment</option>
+                        <option>Question about services</option>
+                        <option>Feedback or concerns</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Your Message</label>
+                    <textarea placeholder="Tell us how we can help..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="social-section">
+        <div class="container">
+            <h2>Connect With Us</h2>
+            <div class="social-links">
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Pinterest</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Book?</h2>
+            <p>Schedule your session and begin your wellness journey.</p>
+            <a href="booking.html" class="btn-primary">Book Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">Intuitivetouch222</a>
+                    <p>A sanctuary for relaxation and wellness.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Info</h4>
+                    <ul>
+                        <li><a href="policies.html">Policies</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Intuitivetouch222. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Intuitivetouch222</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ivory: #FAF7F2;
+            --cream: #F5F0E8;
+            --beige: #E8DFD3;
+            --sage: #9CAF88;
+            --sage-dark: #7A9166;
+            --taupe: #A69080;
+            --earth: #C4B5A5;
+            --warm-brown: #8B7355;
+            --text-dark: #3D3632;
+            --text-soft: #6B625A;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            background-color: var(--ivory);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--sage-dark);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-soft);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--sage-dark);
+        }
+
+        .nav-cta {
+            background: var(--sage);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: var(--sage-dark);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%);
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 56px;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .page-hero p {
+            font-size: 20px;
+            color: var(--text-soft);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Category Tabs */
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            padding: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .category-tab {
+            padding: 12px 28px;
+            border-radius: 30px;
+            border: 2px solid var(--beige);
+            background: var(--white);
+            color: var(--text-soft);
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .category-tab:hover,
+        .category-tab.active {
+            background: var(--sage);
+            color: var(--white);
+            border-color: var(--sage);
+        }
+
+        /* Service Sections */
+        .service-section {
+            padding: 60px 0;
+        }
+
+        .service-section h2 {
+            font-size: 36px;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .service-section > .container > p {
+            font-size: 17px;
+            color: var(--text-soft);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 40px;
+            border: 1px solid var(--beige);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .service-name {
+            font-size: 26px;
+            color: var(--text-dark);
+        }
+
+        .service-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            color: var(--sage-dark);
+        }
+
+        .service-description {
+            font-size: 15px;
+            color: var(--text-soft);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .service-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: var(--taupe);
+        }
+
+        .service-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .best-for {
+            background: var(--cream);
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 14px;
+            color: var(--text-soft);
+            margin-bottom: 24px;
+        }
+
+        .best-for strong {
+            color: var(--text-dark);
+        }
+
+        .btn-book {
+            background: var(--sage);
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            font-weight: 500;
+            transition: background 0.3s;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn-book:hover {
+            background: var(--sage-dark);
+        }
+
+        /* Not Sure Section */
+        .not-sure {
+            padding: 100px 0;
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .not-sure h2 {
+            font-size: 42px;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .not-sure > .container > p {
+            font-size: 18px;
+            color: var(--text-soft);
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .recommend-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .recommend-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .recommend-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .recommend-card h4 {
+            font-size: 22px;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .recommend-card p {
+            font-size: 15px;
+            color: var(--text-soft);
+        }
+
+        /* First Visit Note */
+        .first-visit-note {
+            padding: 80px 0;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .note-content {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--cream);
+            padding: 50px;
+            border-radius: 24px;
+        }
+
+        .note-content h3 {
+            font-size: 28px;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .note-content p {
+            font-size: 16px;
+            color: var(--text-soft);
+            margin-bottom: 20px;
+        }
+
+        .note-content ul {
+            text-align: left;
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .note-content li {
+            font-size: 15px;
+            color: var(--text-soft);
+            margin-bottom: 10px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .note-content li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--sage);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 0;
+            background: var(--ivory);
+        }
+
+        .faq-section h2 {
+            font-size: 42px;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        .faq-item h4 {
+            font-size: 20px;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .faq-item p {
+            font-size: 15px;
+            color: var(--text-soft);
+            line-height: 1.7;
+        }
+
+        /* CTA */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg, var(--sage) 0%, var(--sage-dark) 100%);
+            text-align: center;
+            color: var(--white);
+        }
+
+        .cta-section h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 500px;
+            margin: 0 auto 40px;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--sage-dark);
+            padding: 18px 50px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: var(--ivory);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--cream);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand .logo {
+            color: var(--cream);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .footer-brand p {
+            font-size: 15px;
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: var(--cream);
+            opacity: 0.7;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .services-grid,
+            .recommend-grid,
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Intuitivetouch222</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="#booking" class="nav-cta">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p>Discover treatments designed to restore your body, calm your mind, and nurture your spirit.</p>
+        </div>
+    </section>
+
+    <!-- Category Tabs -->
+    <div class="category-tabs">
+        <button class="category-tab active">All Services</button>
+        <button class="category-tab">Relaxation</button>
+        <button class="category-tab">Therapeutic</button>
+        <button class="category-tab">Specialty</button>
+        <button class="category-tab">Add-Ons</button>
+    </div>
+
+    <!-- Relaxation Services -->
+    <section class="service-section">
+        <div class="container">
+            <h2>Relaxation</h2>
+            <p>Gentle, calming treatments designed to melt away stress and restore your sense of peace.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3 class="service-name">Light Touch Massage</h3>
+                        <span class="service-price">From $85</span>
+                    </div>
+                    <p class="service-description">A gentle, nurturing massage that focuses on relaxation and stress relief. Perfect for those seeking a calming, mindful experience that quiets the nervous system.</p>
+                    <div class="service-meta">
+                        <span>⏱️ 60 or 90 min</span>
+                        <span>💆 Gentle pressure</span>
+                    </div>
+                    <div class="best-for"><strong>Best for:</strong> Stress relief, relaxation, first-time clients, anyone needing gentle care</div>
+                    <a href="#booking" class="btn-book">Book Now</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3 class="service-name">Hot Stone Massage</h3>
+                        <span class="service-price">From $95</span>
+                    </div>
+                    <p class="service-description">Smooth, warm stones placed on key points and used by therapists to melt away tension. Heat penetrates deep into muscles for profound relaxation and release.</p>
+                    <div class="service-meta">
+                        <span>⏱️ 60 or 90 min</span>
+                        <span>🔥 Warm stones</span>
+                    </div>
+                    <div class="best-for"><strong>Best for:</strong> Muscle tension, deep relaxation, cold seasons, anyone who loves warmth</div>
+                    <a href="#booking" class="btn-book">Book Now</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3 class="service-name">Deep Sleep Massage</h3>
+                        <span class="service-price">From $105</span>
+                    </div>
+                    <p class="service-description">A deeply relaxing treatment designed to quiet the mind and prepare the body for restful sleep. Gentle, rhythmic techniques that activate the parasympathetic nervous system.</p>
+                    <div class="service-meta">
+                        <span>⏱️ 75 or 90 min</span>
+                        <span>🌙 Sleep-focused</span>
+                    </div>
+                    <div class="best-for"><strong>Best for:</strong> Insomnia, poor sleep, anxiety, burnout, those needing deep rest</div>
+                    <a href="#booking" class="btn-book">Book Now</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3 class="service-name">30 Minute Massage</h3>
+                        <span class="service-price">From $55</span>
+                    </div>
+                    <p class="service-description">A quick yet effective massage session focused on a specific area or quick tension release. Perfect for busy schedules or targeted relief.</p>
+                    <div class="service-meta">
+                        <span>⏱️ 30 min</span>
+                        <span>🎯 Targeted</span>
+                    </div>
+                    <div class="best-for"><strong>Best for:</strong> Quick relief, tight schedules, targeted areas (neck, back, shoulders)</div>
+                    <a href="#booking" class="btn-book">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Therapeutic Services -->
+    <section class="service-section" style="background: var(--cream);">
+        <div class="container">
+            <h2>Therapeutic</h2>
+            <p>Results-focused treatments targeting specific areas of concern for real healing and relief.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3 class="service-name">Deep Tissue Massage</h3>
+                        <span class="service-price">From $95</span>
+                    </div>
+                    <p class="service-description">Targeted work on deeper muscle layers and connective tissue to release chronic tension, improve mobility, and address persistent pain patterns.</p>
+                    <div class="service-meta">
+                        <span>⏱️ 60 or 90 min</span>
+                        <span>💪 Firm pressure</span>
+                    </div>
+                    <div class="best-for"><strong>Best for:</strong> Chronic tension, injury recovery, limited mobility, athletes</div>
+                    <a href="#booking" class="btn-book">Book Now</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3 class="service-name">Therapeutic Massage</h3>
+                        <span class="service-price">From $90</span>
+                    </div>
+                    <p class="service-description">A results-focused treatment addressing specific areas of concern using a blend of techniques. Tailored to your unique body and wellness goals.</p>
+                    <div class="service-meta">
+                        <span>⏱️ 60 or 90 min</span>
+                        <span>🧘 Customized</span>
+                    </div>
+                    <div class="best-for"><strong>Best for:</strong> Specific pain, injury recovery, ongoing wellness, personalized care</div>
+                    <a href="#booking" class="btn-book">Book Now</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3 class="service-name">Reflexology</h3>
+                        <span class="service-price">From $65</span>
+                    </div>
+                    <p class="service-description">Pressure points on the feet correspond to body systems. Gentle work releases tension and promotes balance throughout the entire body.</p>
+                    <div class="service-meta">
+                        <span>⏱️ 45 or 60 min</span>
+                        <span>🦶 Feet focus</span>
+                    </div>
+                    <div class="best-for"><strong>Best for:</strong> Whole-body wellness, stress, foot tension, those new to bodywork</div>
+                    <a href="#booking" class="btn-book">Book Now</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3 class="service-name">Cupping</h3>
+                        <span class="service-price">From $50</span>
+                    </div>
+                    <p class="service-description">Suction cups placed on the skin to release tension, improve blood flow, and promote healing. Can be used alone or with massage.</p>
+                    <div class="service-meta">
+                        <span>⏱️ 30 or 60 min</span>
+                        <span>🫙 Cupping therapy</span>
+                    </div>
+                    <div class="best-for"><strong>Best for:</strong> Muscle tension, circulation, recovery, traditional therapy seekers</div>
+                    <a href="#booking" class="btn-book">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialty Services -->
+    <section class="service-section">
+        <div class="container">
+            <h2>Specialty</h2>
+            <p>Specialized treatments for specific needs and conditions, performed with expert care.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3 class="service-name">Lymphatic Drainage</h3>
+                        <span class="service-price">From $95</span>
+                    </div>
+                    <p class="service-description">Gentle, rhythmic techniques that encourage the lymphatic system to naturally release toxins and reduce fluid retention. Supports the immune system.</p>
+                    <div class="service-meta">
+                        <span>⏱️ 60 or 90 min</span>
+                        <span>🌊 Gentle flow</span>
+                    </div>
+                    <div class="best-for"><strong>Best for:</strong> Detoxification, swelling, immune support, post-surgery recovery</div>
+                    <a href="#booking" class="btn-book">Book Now</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3 class="service-name">Oncology Massage</h3>
+                        <span class="service-price">From $95</span>
+                    </div>
+                    <p class="service-description">Specially adapted massage for those going through or recovering from cancer treatment. Gentle, safe techniques adapted to individual needs and conditions.</p>
+                    <div class="service-meta">
+                        <span>⏱️ 60 or 90 min</span>
+                        <span>💜 Adapted for you</span>
+                    </div>
+                    <div class="best-for"><strong>Best for:</strong> Cancer patients, survivors, those with sensitive health needs</div>
+                    <a href="#booking" class="btn-book">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add-Ons -->
+    <section class="service-section" style="background: var(--cream);">
+        <div class="container">
+            <h2>Add-Ons</h2>
+            <p>Enhance any treatment with these targeted add-ons for an upgraded experience.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3 class="service-name">30 Minute Add On</h3>
+                        <span class="service-price">+$40</span>
+                    </div>
+                    <p class="service-description">Add 30 minutes of targeted work to any service. Perfect for addressing an extra area or extending your relaxation time.</p>
+                    <div class="service-meta">
+                        <span>⏱️ +30 min</span>
+                        <span>➕ Enhancement</span>
+                    </div>
+                    <div class="best-for"><strong>Best for:</strong> Adding time to any appointment, extra focus on problem areas</div>
+                    <a href="#booking" class="btn-book">Add to Booking</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Not Sure Section -->
+    <section class="not-sure">
+        <div class="container">
+            <h2>Not Sure What to Book?</h2>
+            <p>That's completely okay. Here's a simple guide to help you choose:</p>
+            <div class="recommend-grid">
+                <div class="recommend-card">
+                    <div class="recommend-icon">🧘</div>
+                    <h4>New to Massage?</h4>
+                    <p>Start with our Light Touch Massage. It's gentle, calming, and perfect for first-timers.</p>
+                </div>
+                <div class="recommend-card">
+                    <div class="recommend-icon">😰</div>
+                    <h4>Feeling Stressed?</h4>
+                    <p>Try the Deep Sleep Massage or Hot Stone Massage for deep relaxation and nervous system support.</p>
+                </div>
+                <div class="recommend-card">
+                    <div class="recommend-icon">💪</div>
+                    <h4>Physical Tension?</h4>
+                    <p>Deep Tissue or Therapeutic Massage targets specific areas of concern for real relief.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- First Visit Note -->
+    <section class="first-visit-note">
+        <div class="container">
+            <div class="note-content">
+                <h3>First-Time Clients</h3>
+                <p>Welcome! We're honored to be part of your wellness journey. Here's what you need to know:</p>
+                <ul>
+                    <li>We recommend arriving 10-15 minutes early for your first visit</li>
+                    <li>You'll complete a brief health intake form (nothing complicated!)</li>
+                    <li>We always honor your comfort and preferences</li>
+                    <li>Questions are welcome before, during, and after your session</li>
+                    <li>A credit card is required to secure your booking</li>
+                    <li>24-hour cancellation policy applies</li>
+                </ul>
+                <p><strong>Online booking is secure and easy.</strong> Simply select your service, choose your time, and pay a small deposit to confirm.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>What should I expect at my first visit?</h4>
+                    <p>Plan to arrive early. You'll fill out a brief health form, meet your therapist, discuss your needs, then enjoy your customized treatment.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What is your cancellation policy?</h4>
+                    <p>We require 24 hours notice for cancellations or changes. Late cancellations may incur a fee.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do I need to tip?</h4>
+                    <p>Gratuity is not required but appreciated if you're happy with your service. It's entirely your choice.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What if I have health concerns?</h4>
+                    <p>Please mention any health conditions when booking. We will discuss any adaptations needed during your consultation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="booking">
+        <div class="container">
+            <h2>Ready to Book?</h2>
+            <p>Select your service, choose a time, and secure your appointment online.</p>
+            <a href="#" class="btn-primary">Book Your Appointment</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">Intuitivetouch222</a>
+                    <p>A sanctuary for relaxation and wellness. We look forward to welcoming you.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Book Now</a></li>
+                        <li><a href="#">Gift Certificates</a></li>
+                        <li><a href="#">Policies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="#">Email Us</a></li>
+                        <li><a href="#">Location</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Intuitivetouch222. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple category filter
+        const tabs = document.querySelectorAll('.category-tab');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

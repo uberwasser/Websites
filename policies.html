@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policies & FAQ | Intuitivetouch222</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ivory: #FAF7F2;
+            --cream: #F5F0E8;
+            --beige: #E8DFD3;
+            --sage: #9CAF88;
+            --sage-dark: #7A9166;
+            --taupe: #A69080;
+            --earth: #C4B5A5;
+            --warm-brown: #8B7355;
+            --text-dark: #3D3632;
+            --text-soft: #6B625A;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            background-color: var(--ivory);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--sage-dark);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-soft);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--sage-dark);
+        }
+
+        .nav-cta {
+            background: var(--sage);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: var(--sage-dark);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            padding: 180px 0 80px;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%);
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 52px;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .page-hero p {
+            font-size: 18px;
+            color: var(--text-soft);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Policies Section */
+        .policies {
+            padding: 80px 0;
+        }
+
+        .policy-section {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 24px;
+            margin-bottom: 30px;
+            border: 1px solid var(--beige);
+        }
+
+        .policy-section h2 {
+            font-size: 28px;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .policy-section h2 span {
+            font-size: 24px;
+        }
+
+        .policy-section > p {
+            font-size: 16px;
+            color: var(--text-soft);
+            line-height: 1.8;
+        }
+
+        .policy-section ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .policy-section li {
+            font-size: 15px;
+            color: var(--text-soft);
+            padding: 10px 0;
+            border-bottom: 1px solid var(--beige);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .policy-section li:last-child {
+            border-bottom: none;
+        }
+
+        .policy-section li strong {
+            color: var(--text-dark);
+        }
+
+        /* Important Box */
+        .important-box {
+            background: var(--cream);
+            border-left: 4px solid var(--sage);
+            padding: 24px 30px;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+
+        .important-box h3 {
+            font-size: 20px;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .important-box p {
+            font-size: 15px;
+            color: var(--text-soft);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background: var(--cream);
+        }
+
+        .faq-section h2 {
+            font-size: 42px;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .faq-item {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 20px;
+        }
+
+        .faq-item h4 {
+            font-size: 20px;
+            color: var(--text-dark);
+            margin-bottom: 14px;
+        }
+
+        .faq-item p {
+            font-size: 15px;
+            color: var(--text-soft);
+            line-height: 1.8;
+        }
+
+        /* Contact CTA */
+        .contact-cta {
+            padding: 80px 0;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .contact-cta h2 {
+            font-size: 36px;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .contact-cta p {
+            font-size: 17px;
+            color: var(--text-soft);
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            background: var(--sage);
+            color: var(--white);
+            padding: 16px 40px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: var(--sage-dark);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--cream);
+            padding: 50px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 30px;
+        }
+
+        .footer-brand .logo {
+            color: var(--cream);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            opacity: 0.8;
+            line-height: 1.7;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: var(--cream);
+            opacity: 0.7;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+            opacity: 0.7;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Intuitivetouch222</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="#booking" class="nav-cta">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Policies & FAQ</h1>
+            <p>Everything you need to know before your visit. We're here to make your experience seamless and comfortable.</p>
+        </div>
+    </section>
+
+    <!-- Policies Section -->
+    <section class="policies">
+        <div class="container">
+            <div class="policy-section">
+                <h2><span>💰</span> Deposits</h2>
+                <p>To secure your appointment, a credit card is required at the time of booking. A small deposit will be charged to hold your time. This deposit goes toward your treatment.</p>
+                <ul>
+                    <li><span>Standard appointments (60+ min)</span> <strong>$30 deposit</strong></li>
+                    <li><span>Shorter sessions (30-45 min)</span> <strong>$20 deposit</strong></li>
+                    <li><span>Specialty services</span> <strong>Varies by service</strong></li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2><span>📅</span> Cancellation Policy</h2>
+                <p>We understand that life happens. Our policy is designed to be fair while ensuring we can serve all our clients.</p>
+                <ul>
+                    <li><span>24+ hours before</span> <strong>Full refund, no fee</strong></li>
+                    <li><span>12-24 hours before</span> <strong>Deposit forfeited, no additional charge</strong></li>
+                    <li><span>Under 12 hours</span> <strong>Full charge applied</strong></li>
+                    <li><span>No-call/no-show</span> <strong>Full service fee charged</strong></li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2><span>⏰</span> Late Arrivals</h2>
+                <p>We value your time and strive to start every appointment on schedule. Here's how we handle late arrivals:</p>
+                <ul>
+                    <li><span>Up to 15 min late</span> <strong>Session shortened, full price</strong></li>
+                    <li><span>15+ min late</span> <strong>May need to reschedule</strong></li>
+                    <li><span>Note</span> <strong>We cannot extend sessions past original end time</strong></li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2><span>🚫</span> No-Shows</h2>
+                <p>If you don't arrive for your scheduled appointment without contacting us, the following applies:</p>
+                <ul>
+                    <li><span>First no-show</span> <strong>Full service charge + future deposit required</strong></li>
+                    <li><span>Repeat no-shows</span> <strong>May require prepayment for future bookings</strong></li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2><span>🔄</span> Rescheduling</h2>
+                <p>Need to change your appointment? Here's how:</p>
+                <ul>
+                    <li><span>Online rescheduling</span> <strong>Available up to 12 hours before</strong></li>
+                    <li><span>By phone/text</span> <strong>Happy to help anytime</strong></li>
+                    <li><span>Multiple changes</span> <strong>May require new deposit</strong></li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2><span>💳</span> Payment Methods</h2>
+                <p>We accept a variety of payment options for your convenience:</p>
+                <ul>
+                    <li><span>Credit/debit cards</span> <strong>Visa, Mastercard, Amex</strong></li>
+                    <li><span>Digital payments</span> <strong>Venmo, PayPal</strong></li>
+                    <li><span>At studio</span> <strong>Card on file or mobile payment</strong></li>
+                    <li><span>Tipping</span> <strong>Not required, but appreciated</strong></li>
+                </ul>
+            </div>
+
+            <div class="important-box">
+                <h3>We Honor Your Health</h3>
+                <p>If you're feeling unwell, please let us know. We're happy to reschedule or offer a credit toward a future visit. Your wellbeing—and that of our community—comes first.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2><span>📋</span> Intake Forms</h2>
+                <p>For your safety and best experience, we ask that you complete a brief health intake form before your first visit. This helps us:</p>
+                <ul>
+                    <li><span>Understand your health history</span> <strong>Including any conditions or injuries</strong></li>
+                    <li><span>Personalize your treatment</span> <strong>To your specific needs and preferences</strong></li>
+                    <li><span>Ensure safe practices</span> <strong>Adapted to your comfort level</strong></li>
+                    <li><span>Form completed</span> <strong>Online, takes 5 minutes</strong></li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2><span>💜</span> Health & Wellness Considerations</h2>
+                <p>We welcome everyone and are trained to adapt our treatments to various health situations. Please let us know if you have:</p>
+                <ul>
+                    <li><span>Chronic conditions</span> <strong>Diabetes, heart conditions, etc.</strong></li>
+                    <li><span>Recent injuries or surgeries</span> <strong>We'll modify as needed</strong></li>
+                    <li><span>Pregnancy</span> <strong>We have pregnancy-safe options</strong></li>
+                    <li><span>Allergies</span> <strong>Lotions, oils, scents</strong></li>
+                    <li><span>Sensitive skin</span> <strong>We have fragrance-free options</strong></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>What should I expect at my first appointment?</h4>
+                    <p>Arrive 10-15 minutes early. You'll complete a brief health intake form, then meet your therapist for a quick consultation. After that, enjoy your personalized treatment. We'll always ensure you're comfortable.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Which service is right for me?</h4>
+                    <p>If you're new or want relaxation, start with Light Touch Massage. For specific tension, try Deep Tissue or Therapeutic Massage. Not sure? Check our "Not Sure What to Book?" section on the Services page, or simply tell us what you're feeling and we'll recommend.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Are deposits required?</h4>
+                    <p>Yes, a small deposit is required to secure your booking. This ensures your time is reserved for you. The deposit goes toward your final treatment cost. We understand plans change—just give us 24 hours notice for a full refund.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Can I reschedule online?</h4>
+                    <p>Yes! You can reschedule through our booking system up to 12 hours before your appointment. After that, please call or text us. We're happy to help with any changes.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>How should I prepare for my massage?</h4>
+                    <p>Wear comfortable clothing. Come hydrated but not starving. Arrive a bit early to settle in. Most importantly—relax! We'll handle the rest. Let your therapist know your preferences and any areas you want focused on (or avoided).</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Do you offer support for stress relief and sleep?</h4>
+                    <p>Absolutely. Our Deep Sleep Massage and Light Touch Massage are specifically designed for stress relief and nervous system support. We also offer guidance on relaxation techniques you can use at home.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>What is lymphatic drainage?</h4>
+                    <p>Lymphatic drainage is a gentle technique that encourages the lymph system to release toxins and reduce fluid retention. It's incredibly soothing, supports the immune system, and can help with swelling, digestion, and overall detoxification.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Is oncology massage gentle and supportive?</h4>
+                    <p>Yes. Our oncology massage is specifically adapted for clients going through or recovering from cancer treatment. We use gentle pressure, avoid certain areas, and tailor every session to your current health and comfort level. Your safety and comfort are our priority.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Can I add extra time to my session?</h4>
+                    <p>Yes! Our "30 Minute Add On" lets you extend any appointment by 30 minutes. Simply select it when booking, or ask your therapist during your visit if time allows. It's perfect for adding extra focus on problem areas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+        <div class="container">
+            <h2>Questions? We're Here to Help</h2>
+            <p>Can't find what you're looking for? Reach out and we'll be happy to assist.</p>
+            <a href="contact.html" class="btn-primary">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">Intuitivetouch222</a>
+                    <p>A sanctuary for relaxation and wellness. We look forward to welcoming you.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Info</h4>
+                    <ul>
+                        <li><a href="#">Policies & FAQ</a></li>
+                        <li><a href="#">Gift Certificates</a></li>
+                        <li><a href="#">Book Now</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Intuitivetouch222. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{Service Name} | Intuitivetouch222</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ivory: #FAF7F2;
+            --cream: #F5F0E8;
+            --beige: #E8DFD3;
+            --sage: #9CAF88;
+            --sage-dark: #7A9166;
+            --taupe: #A69080;
+            --text-dark: #3D3632;
+            --text-soft: #6B625A;
+            --white: #FFFFFF;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Nunito Sans', sans-serif; background: var(--ivory); color: var(--text-dark); line-height: 1.7; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 500; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+        
+        /* Navigation */
+        nav { background: var(--white); padding: 20px 0; position: fixed; width: 100%; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.05); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--sage-dark); text-decoration: none; }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { color: var(--text-soft); text-decoration: none; font-size: 15px; }
+        .nav-links a:hover { color: var(--sage-dark); }
+        .nav-cta { background: var(--sage); color: var(--white); padding: 10px 24px; border-radius: 30px; text-decoration: none; font-size: 14px; }
+        .nav-cta:hover { background: var(--sage-dark); }
+
+        /* Hero */
+        .hero { padding: 180px 0 100px; background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%); text-align: center; }
+        .hero h1 { font-size: 52px; color: var(--text-dark); margin-bottom: 16px; }
+        .hero-tagline { font-size: 24px; color: var(--text-soft); font-style: italic; margin-bottom: 30px; }
+        .btn-primary { background: var(--sage); color: var(--white); padding: 16px 40px; border-radius: 40px; text-decoration: none; font-size: 16px; font-weight: 500; display: inline-block; }
+        .btn-primary:hover { background: var(--sage-dark); }
+
+        /* Sections */
+        section { padding: 80px 0; }
+        section:nth-child(even) { background: var(--white); }
+        
+        h2 { font-size: 36px; color: var(--text-dark); margin-bottom: 20px; }
+        .section-intro { font-size: 18px; color: var(--text-soft); max-width: 700px; margin: 0 auto 40px; text-align: center; }
+        
+        /* Overview */
+        .overview-content { max-width: 800px; margin: 0 auto; text-align: center; }
+        .overview-content p { font-size: 18px; color: var(--text-soft); line-height: 2; }
+
+        /* Benefits */
+        .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .benefit-card { background: var(--cream); padding: 40px 30px; border-radius: 20px; text-align: center; }
+        .benefit-icon { font-size: 36px; margin-bottom: 16px; }
+        .benefit-card h4 { font-size: 20px; color: var(--text-dark); margin-bottom: 12px; }
+        .benefit-card p { font-size: 15px; color: var(--text-soft); }
+
+        /* What to Expect */
+        .expect-list { max-width: 700px; margin: 0 auto; }
+        .expect-item { display: flex; gap: 20px; margin-bottom: 30px; align-items: flex-start; }
+        .expect-number { width: 40px; height: 40px; background: var(--sage); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 20px; flex-shrink: 0; }
+        .expect-content h4 { font-size: 20px; color: var(--text-dark); margin-bottom: 8px; }
+        .expect-content p { font-size: 15px; color: var(--text-soft); }
+
+        /* Who For */
+        .who-for { background: var(--cream); }
+        .who-content { max-width: 800px; margin: 0 auto; }
+        .who-list { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .who-tag { background: var(--white); padding: 12px 24px; border-radius: 30px; font-size: 15px; color: var(--text-soft); }
+
+        /* Duration & Pricing */
+        .pricing-section { background: var(--white); text-align: center; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 700px; margin: 0 auto; }
+        .pricing-card { background: var(--cream); padding: 30px; border-radius: 20px; }
+        .pricing-card h4 { font-size: 22px; color: var(--text-dark); margin-bottom: 8px; }
+        .pricing-card .time { font-size: 14px; color: var(--taupe); margin-bottom: 12px; }
+        .pricing-card .price { font-family: 'Cormorant Garamond', serif; font-size: 32px; color: var(--sage-dark); }
+
+        /* Preparation */
+        .prep-content { max-width: 700px; margin: 0 auto; }
+        .prep-list { list-style: none; }
+        .prep-list li { padding: 16px 0; border-bottom: 1px solid var(--beige); display: flex; gap: 16px; }
+        .prep-list li:last-child { border: none; }
+        .prep-icon { color: var(--sage); font-size: 20px; }
+        .prep-list span { color: var(--text-soft); font-size: 15px; }
+
+        /* Related */
+        .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .related-card { background: var(--white); padding: 30px; border-radius: 20px; border: 1px solid var(--beige); text-align: center; }
+        .related-card h4 { font-size: 20px; color: var(--text-dark); margin-bottom: 8px; }
+        .related-card p { font-size: 14px; color: var(--text-soft); margin-bottom: 16px; }
+        .related-card a { color: var(--sage-dark); text-decoration: none; font-size: 14px; }
+
+        /* CTA */
+        .cta-section { background: linear-gradient(180deg, var(--sage) 0%, var(--sage-dark) 100%); color: var(--white); text-align: center; padding: 100px 0; }
+        .cta-section h2 { color: var(--white); font-size: 42px; margin-bottom: 16px; }
+        .cta-section p { font-size: 18px; opacity: 0.9; margin-bottom: 30px; }
+        .cta-section .btn-primary { background: var(--white); color: var(--sage-dark); }
+
+        /* Footer */
+        footer { background: var(--text-dark); color: var(--cream); padding: 50px 0 25px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; margin-bottom: 30px; }
+        .footer-brand .logo { color: var(--cream); margin-bottom: 15px; display: block; }
+        .footer-brand p { font-size: 14px; opacity: 0.8; }
+        .footer-col h4 { font-size: 16px; margin-bottom: 15px; color: var(--white); }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 10px; }
+        .footer-col a { color: var(--cream); opacity: 0.7; text-decoration: none; font-size: 14px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; font-size: 13px; opacity: 0.7; }
+
+        @media (max-width: 768px) {
+            .benefits-grid, .pricing-grid, .related-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Intuitivetouch222</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="booking.html">Book</a></li>
+            </ul>
+            <a href="booking.html" class="nav-cta">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>{Service Name}</h1>
+            <p class="hero-tagline">{Emotional headline e.g., "Release deep tension and reclaim your comfort"}</p>
+            <a href="booking.html" class="btn-primary">Book Now</a>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section>
+        <div class="container">
+            <div class="overview-content">
+                <h2>Experience {Service Name}</h2>
+                <p>{Warm description of the service experience. Describe the atmosphere, the touch, how it feels. Appeal to the senses—warmth, soothing, release. Make the client feel Already there.}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section>
+        <div class="container">
+            <h2>Benefits</h2>
+            <p class="section-intro">This treatment supports your body, mind, and spirit in multiple ways.</p>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💪</div>
+                    <h4>Physical</h4>
+                    <p>{Physical benefits—muscle release, improved circulation, reduced pain, better mobility}</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🧘</div>
+                    <h4>Emotional</h4>
+                    <p>{Emotional benefits—stress relief, mental clarity, feeling grounded, emotional release}</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌱</div>
+                    <h4>Wellness</h4>
+                    <p>{Long-term wellness benefits—better sleep, improved posture, nervous system balance}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What to Expect -->
+    <section>
+        <div class="container">
+            <h2>What to Expect</h2>
+            <p class="section-intro">Your session flows gently from start to finish.</p>
+            <div class="expect-list">
+                <div class="expect-item">
+                    <div class="expect-number">1</div>
+                    <div class="expect-content">
+                        <h4>Arrival & Settling</h4>
+                        <p>You'll be welcomed into our peaceful studio. Take a moment to breathe, and share any preferences or areas you'd like focused on (or avoided).</p>
+                    </div>
+                </div>
+                <div class="expect-item">
+                    <div class="expect-number">2</div>
+                    <div class="expect-content">
+                        <h4>The Treatment</h4>
+                        <p>{Describe the pressure style, techniques used, how the room feels, any special elements like heat or oils. Keep it calming and client-centered.}</p>
+                    </div>
+                </div>
+                <div class="expect-item">
+                    <div class="expect-number">3</div>
+                    <div class="expect-content">
+                        <h4>Aftercare & Rest</h4>
+                        <p>We'll give you a moment to slowly come back. You'll receive simple guidance for extending your relief at home.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who It's For -->
+    <section class="who-for">
+        <div class="container">
+            <h2>Who This Is Best For</h2>
+            <div class="who-content">
+                <div class="who-list">
+                    <span class="who-tag">{Ideal client need 1, e.g., "Chronic back tension"}</span>
+                    <span class="who-tag">{Ideal client need 2, e.g., "Post-workout recovery"}</span>
+                    <span class="who-tag">{Ideal client need 3, e.g., "Limited range of motion"}</span>
+                    <span class="who-tag">{Ideal client need 4, e.g., "Desk worker neck pain"}</span>
+                    <span class="who-tag">{Ideal client need 5, e.g., "Athletic performance support"}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Duration & Pricing -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2>Duration & Investment</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h4>Express</h4>
+                    <p class="time">{Duration, e.g., "45 minutes"}</p>
+                    <p class="price">${Price}</p>
+                </div>
+                <div class="pricing-card">
+                    <h4>Standard</h4>
+                    <p class="time">{Duration, e.g., "60 minutes"}</p>
+                    <p class="price">${Price}</p>
+                </div>
+                <div class="pricing-card">
+                    <h4>Extended</h4>
+                    <p class="time">{Duration, e.g., "90 minutes"}</p>
+                    <p class="price">${Price}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preparation -->
+    <section>
+        <div class="container">
+            <h2>Preparation & Aftercare</h2>
+            <div class="prep-content">
+                <ul class="prep-list">
+                    <li><span class="prep-icon">✦</span> <span>{Preparation tip 1, e.g., "Wear comfortable, loose-fitting clothing"}</span></li>
+                    <li><span class="prep-icon">✦</span> <span>{Preparation tip 2, e.g., "Be well-hydrated but not overly full"}</span></li>
+                    <li><span class="prep-icon">✦</span> <span>{Aftercare tip 1, e.g., "Drink plenty of water to help flush toxins"}</span></li>
+                    <li><span class="prep-icon">✦</span> <span>{Aftercare tip 2, e.g., "Take it easy for the rest of the day"}</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Services -->
+    <section>
+        <div class="container">
+            <h2>Related Services</h2>
+            <div class="related-grid">
+                <div class="related-card">
+                    <h4>{Related Service 1}</h4>
+                    <p>Brief description</p>
+                    <a href="service-deep-tissue.html">Learn more →</a>
+                </div>
+                <div class="related-card">
+                    <h4>{Related Service 2}</h4>
+                    <p>Brief description</p>
+                    <a href="service-therapeutic.html">Learn more →</a>
+                </div>
+                <div class="related-card">
+                    <h4>{Related Service 3}</h4>
+                    <p>Brief description</p>
+                    <a href="service-hot-stone.html">Learn more →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Book Your Session?</h2>
+            <p>Reserve your time and begin your healing journey.</p>
+            <a href="booking.html" class="btn-primary">Book {Service Name}</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">Intuitivetouch222</a>
+                    <p>A sanctuary for relaxation and wellness.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Info</h4>
+                    <ul>
+                        <li><a href="policies.html">Policies</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Intuitivetouch222. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

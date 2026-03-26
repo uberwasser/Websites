@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specials & Promotions | Intuitivetouch222</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --ivory: #FAF7F2; --cream: #F5F0E8; --beige: #E8DFD3; --sage: #9CAF88; --sage-dark: #7A9166; --taupe: #A69080; --text-dark: #3D3632; --text-soft: #6B625A; --white: #FFFFFF; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Nunito Sans', sans-serif; background: var(--ivory); color: var(--text-dark); line-height: 1.7; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 500; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+        nav { background: var(--white); padding: 20px 0; position: fixed; width: 100%; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.05); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--sage-dark); text-decoration: none; }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { color: var(--text-soft); text-decoration: none; font-size: 15px; }
+        .nav-cta { background: var(--sage); color: var(--white); padding: 10px 24px; border-radius: 30px; text-decoration: none; font-size: 14px; }
+        .btn-primary { background: var(--sage); color: var(--white); padding: 14px 32px; border-radius: 40px; text-decoration: none; font-size: 15px; font-weight: 500; display: inline-block; transition: all 0.3s; }
+        .btn-primary:hover { background: var(--sage-dark); }
+        .btn-secondary { background: transparent; border: 2px solid var(--sage); color: var(--sage-dark); padding: 14px 32px; border-radius: 40px; text-decoration: none; font-size: 15px; display: inline-block; }
+        .btn-secondary:hover { background: var(--sage); color: var(--white); }
+
+        .hero { padding: 180px 0 80px; background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%); text-align: center; }
+        .hero h1 { font-size: 52px; color: var(--text-dark); margin-bottom: 16px; }
+        .hero p { font-size: 20px; color: var(--text-soft); max-width: 600px; margin: 0 auto; }
+
+        section { padding: 80px 0; }
+        section:nth-child(even) { background: var(--white); }
+
+        .offer-section h2 { font-size: 36px; margin-bottom: 16px; text-align: center; }
+        .offer-section > .container > p { font-size: 17px; color: var(--text-soft); text-align: center; max-width: 600px; margin: 0 auto 40px; }
+        .offer-card { background: var(--white); border: 2px solid var(--sage); border-radius: 24px; padding: 50px; text-align: center; max-width: 600px; margin: 0 auto; }
+        .offer-card h3 { font-size: 32px; color: var(--text-dark); margin-bottom: 16px; }
+        .offer-card p { font-size: 17px; color: var(--text-soft); margin-bottom: 30px; }
+        .offer-tag { background: var(--sage); color: var(--white); padding: 6px 20px; border-radius: 20px; font-size: 13px; display: inline-block; margin-bottom: 20px; }
+
+        .promo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .promo-card { background: var(--cream); padding: 40px 30px; border-radius: 20px; text-align: center; }
+        .promo-card h4 { font-size: 24px; color: var(--text-dark); margin-bottom: 12px; }
+        .promo-card p { font-size: 15px; color: var(--text-soft); margin-bottom: 20px; }
+        .promo-card .price { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--sage-dark); margin-bottom: 20px; display: block; }
+
+        .referral-card { background: linear-gradient(135deg, var(--sage) 0%, var(--sage-dark) 100%); border-radius: 24px; padding: 60px; text-align: center; color: var(--white); }
+        .referral-card h3 { font-size: 32px; margin-bottom: 16px; color: var(--white); }
+        .referral-card p { font-size: 17px; opacity: 0.9; margin-bottom: 30px; }
+        .referral-card .btn-primary { background: var(--white); color: var(--sage-dark); }
+
+        .package-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .package-card { background: var(--white); padding: 40px 30px; border-radius: 24px; border: 1px solid var(--beige); text-align: center; }
+        .package-card.popular { border-color: var(--sage); position: relative; }
+        .package-card .badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--sage); color: var(--white); padding: 6px 20px; border-radius: 20px; font-size: 12px; }
+        .package-card h4 { font-size: 24px; color: var(--text-dark); margin-bottom: 12px; }
+        .package-card .price { font-family: 'Cormorant Garamond', serif; font-size: 36px; color: var(--sage-dark); margin-bottom: 20px; }
+        .package-card ul { list-style: none; text-align: left; margin-bottom: 30px; }
+        .package-card li { padding: 8px 0; font-size: 14px; color: var(--text-soft); border-bottom: 1px solid var(--beige); }
+        .package-card li:last-child { border: none; }
+
+        .membership-section { background: var(--cream); text-align: center; }
+        .membership-section h2 { margin-bottom: 20px; }
+        .membership-section > .container > p { font-size: 17px; color: var(--text-soft); max-width: 600px; margin: 0 auto 40px; }
+
+        @media (max-width: 768px) { .promo-grid, .package-grid { grid-template-columns: 1fr; } .nav-links { display: none; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Intuitivetouch222</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="booking.html">Book</a></li>
+            </ul>
+            <a href="booking.html" class="nav-cta">Book Now</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Special Offers</h1>
+            <p>Exclusive promotions to support your wellness journey. Because self-care should be accessible.</p>
+        </div>
+    </section>
+
+    <section class="offer-section">
+        <div class="container">
+            <span class="offer-tag">New Clients</span>
+            <h2>First Visit Welcome</h2>
+            <p>Start your wellness journey with us and receive a special rate on your first session.</p>
+            <div class="offer-card">
+                <h3>15% Off Your First Visit</h3>
+                <p>Experience our calming space, personalized care, and therapeutic touch. This offer applies to any service of 60 minutes or more.</p>
+                <a href="booking.html" class="btn-primary">Claim Offer</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 style="text-align:center; margin-bottom:40px;">Current Specials</h2>
+            <div class="promo-grid">
+                <div class="promo-card">
+                    <h4>Spring Renewal</h4>
+                    <p>Refresh and reset with our seasonal special.</p>
+                    <span class="price">$85</span>
+                    <p>Light Touch Massage, 60 min<br><small>Regular $95</small></p>
+                    <a href="booking.html" class="btn-secondary">Book Now</a>
+                </div>
+                <div class="promo-card">
+                    <h4>Couples Connection</h4>
+                    <p>Share a relaxing experience together.</p>
+                    <span class="price">$170</span>
+                    <p>Two 60-min massages<br><small>Save $20</small></p>
+                    <a href="booking.html" class="btn-secondary">Book Now</a>
+                </div>
+                <div class="promo-card">
+                    <h4>Double Escape</h4>
+                    <p>Book two sessions and save.</p>
+                    <span class="price">$170</span>
+                    <p>Two 60-min massages<br><small>Save $20</small></p>
+                    <a href="booking.html" class="btn-secondary">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="referral-card">
+                <h3>Share the Wellness</h3>
+                <p>Invite a friend to experience Intuitivetouch222. When they book, you both receive $20 off your next visit.</p>
+                <a href="contact.html" class="btn-primary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 style="text-align:center; margin-bottom:40px;">Rebook & Save</h2>
+            <p style="text-align:center; margin-bottom:30px; color:var(--text-soft);">Book within 30 days of your last visit and receive 10% off.</p>
+            <div style="text-align:center;">
+                <a href="booking.html" class="btn-primary">Book Your Next Session</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 style="text-align:center; margin-bottom:40px;">Wellness Packages</h2>
+            <div class="package-grid">
+                <div class="package-card">
+                    <h4>Starter</h4>
+                    <span class="price">$250</span>
+                    <ul>
+                        <li>2x 60-min massages</li>
+                        <li>1x 30-min add-on</li>
+                        <li>Valid 3 months</li>
+                    </ul>
+                    <a href="booking.html" class="btn-secondary">Learn More</a>
+                </div>
+                <div class="package-card popular">
+                    <span class="badge">Most Popular</span>
+                    <h4>Essential</h4>
+                    <span class="price">$450</span>
+                    <ul>
+                        <li>4x 60-min massages</li>
+                        <li>2x 30-min add-ons</li>
+                        <li>1x Free upgrade</li>
+                        <li>Valid 6 months</li>
+                    </ul>
+                    <a href="booking.html" class="btn-primary">Learn More</a>
+                </div>
+                <div class="package-card">
+                    <h4>Complete</h4>
+                    <span class="price">$800</span>
+                    <ul>
+                        <li>8x 60-min massages</li>
+                        <li>4x 30-min add-ons</li>
+                        <li>2x Free upgrades</li>
+                        <li>Priority booking</li>
+                        <li>Valid 12 months</li>
+                    </ul>
+                    <a href="booking.html" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="membership-section">
+        <div class="container">
+            <h2>Monthly Membership</h2>
+            <p>For those who prioritize regular self-care. Enjoy reduced rates, priority booking, and exclusive perks.</p>
+            <a href="contact.html" class="btn-primary">Inquire About Membership</a>
+        </div>
+    </section>
+
+    <footer style="background:var(--text-dark); color:var(--cream); padding:50px 0 25px;">
+        <div class="container">
+            <p style="text-align:center; opacity:0.7;">&copy; 2026 Intuitivetouch222. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now | Intuitivetouch222</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ivory: #FAF7F2;
+            --cream: #F5F0E8;
+            --beige: #E8DFD3;
+            --sage: #9CAF88;
+            --sage-dark: #7A9166;
+            --taupe: #A69080;
+            --text-dark: #3D3632;
+            --text-soft: #6B625A;
+            --white: #FFFFFF;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Nunito Sans', sans-serif; background: var(--ivory); color: var(--text-dark); line-height: 1.7; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 500; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        
+        /* Navigation */
+        nav { background: var(--white); padding: 20px 0; position: fixed; width: 100%; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.05); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--sage-dark); text-decoration: none; }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { color: var(--text-soft); text-decoration: none; font-size: 15px; }
+        .nav-links a:hover { color: var(--sage-dark); }
+        .nav-cta { background: var(--sage); color: var(--white); padding: 10px 24px; border-radius: 30px; text-decoration: none; font-size: 14px; }
+        .nav-cta:hover { background: var(--sage-dark); }
+
+        /* Hero */
+        .hero { padding: 180px 0 80px; background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%); text-align: center; }
+        .hero h1 { font-size: 52px; color: var(--text-dark); margin-bottom: 16px; }
+        .hero p { font-size: 20px; color: var(--text-soft); max-width: 600px; margin: 0 auto; }
+        
+        .btn-primary { background: var(--sage); color: var(--white); padding: 18px 45px; border-radius: 40px; text-decoration: none; font-size: 17px; font-weight: 500; display: inline-block; transition: all 0.3s; }
+        .btn-primary:hover { background: var(--sage-dark); transform: translateY(-2px); }
+
+        /* Steps */
+        .steps-section { padding: 80px 0; background: var(--white); }
+        .steps-section h2 { text-align: center; font-size: 42px; margin-bottom: 50px; }
+        .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+        .step-card { text-align: center; padding: 40px 20px; }
+        .step-icon { width: 80px; height: 80px; background: var(--cream); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; margin: 0 auto 20px; }
+        .step-card h4 { font-size: 22px; color: var(--text-dark); margin-bottom: 12px; }
+        .step-card p { font-size: 15px; color: var(--text-soft); }
+
+        /* Calendar Section */
+        .calendar-section { padding: 80px 0; background: var(--cream); text-align: center; }
+        .calendar-section h2 { font-size: 42px; margin-bottom: 16px; }
+        .calendar-section > .container > p { font-size: 18px; color: var(--text-soft); margin-bottom: 40px; }
+        .calendar-placeholder { background: var(--white); border-radius: 24px; padding: 80px 40px; max-width: 800px; margin: 0 auto; border: 2px dashed var(--beige); }
+        .calendar-placeholder h3 { font-size: 28px; color: var(--text-dark); margin-bottom: 16px; }
+        .calendar-placeholder p { font-size: 16px; color: var(--text-soft); margin-bottom: 30px; }
+        
+        .calendar-options { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .calendar-option { background: var(--sage); color: var(--white); padding: 16px 32px; border-radius: 30px; font-size: 15px; text-decoration: none; transition: background 0.3s; }
+        .calendar-option:hover { background: var(--sage-dark); }
+
+        /* Payment Section */
+        .payment-section { padding: 80px 0; background: var(--white); }
+        .payment-content { max-width: 800px; margin: 0 auto; }
+        .payment-section h2 { font-size: 36px; text-align: center; margin-bottom: 40px; }
+        
+        .payment-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        .payment-card { background: var(--cream); padding: 30px; border-radius: 20px; }
+        .payment-card h4 { font-size: 22px; color: var(--text-dark); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+        .payment-card p { font-size: 15px; color: var(--text-soft); }
+
+        .deposit-box { background: var(--sage); color: var(--white); padding: 30px; border-radius: 20px; margin-top: 30px; text-align: center; }
+        .deposit-box h4 { font-size: 22px; margin-bottom: 8px; color: var(--white); }
+        .deposit-box p { font-size: 15px; opacity: 0.9; }
+
+        /* New Client */
+        .new-client-section { padding: 80px 0; background: var(--cream); }
+        .new-client-section h2 { font-size: 36px; text-align: center; margin-bottom: 40px; }
+        
+        .new-client-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .new-client-card { background: var(--white); padding: 40px 30px; border-radius: 20px; text-align: center; }
+        .new-client-icon { font-size: 36px; margin-bottom: 16px; }
+        .new-client-card h4 { font-size: 20px; color: var(--text-dark); margin-bottom: 12px; }
+        .new-client-card p { font-size: 15px; color: var(--text-soft); }
+
+        /* FAQ */
+        .faq-section { padding: 80px 0; background: var(--white); }
+        .faq-section h2 { font-size: 42px; text-align: center; margin-bottom: 50px; }
+        
+        .faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; max-width: 900px; margin: 0 auto; }
+        .faq-item { background: var(--cream); padding: 30px; border-radius: 16px; }
+        .faq-item h4 { font-size: 18px; color: var(--text-dark); margin-bottom: 10px; }
+        .faq-item p { font-size: 14px; color: var(--text-soft); }
+
+        /* Final CTA */
+        .final-cta { padding: 100px 0; background: linear-gradient(180deg, var(--sage) 0%, var(--sage-dark) 100%); text-align: center; color: var(--white); }
+        .final-cta h2 { font-size: 48px; color: var(--white); margin-bottom: 16px; }
+        .final-cta p { font-size: 20px; opacity: 0.9; margin-bottom: 40px; }
+        .final-cta .btn-primary { background: var(--white); color: var(--sage-dark); font-size: 20px; padding: 20px 50px; }
+
+        /* Footer */
+        footer { background: var(--text-dark); color: var(--cream); padding: 50px 0 25px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; margin-bottom: 30px; }
+        .footer-brand .logo { color: var(--cream); margin-bottom: 15px; display: block; }
+        .footer-brand p { font-size: 14px; opacity: 0.8; }
+        .footer-col h4 { font-size: 16px; margin-bottom: 15px; color: var(--white); }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 10px; }
+        .footer-col a { color: var(--cream); opacity: 0.7; text-decoration: none; font-size: 14px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; font-size: 13px; opacity: 0.7; }
+
+        @media (max-width: 768px) {
+            .steps-grid, .payment-grid, .new-client-grid, .faq-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Intuitivetouch222</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="booking.html">Book</a></li>
+            </ul>
+            <a href="#booking" class="nav-cta">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Book Your Session</h1>
+            <p>Schedule your time for wellness. Our simple, secure online booking makes it easy to reserve your appointment.</p>
+        </div>
+    </section>
+
+    <!-- Steps -->
+    <section class="steps-section">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-icon">📋</div>
+                    <h4>Choose Service</h4>
+                    <p>Select from our menu of massage and wellness treatments</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">📅</div>
+                    <h4>Pick Date & Time</h4>
+                    <p>Find a time that works for your schedule</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">💳</div>
+                    <h4>Secure Payment</h4>
+                    <p>Complete deposit or payment details to confirm</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">✓</div>
+                    <h4>Confirm & Relax</h4>
+                    <p>Receive confirmation and appointment reminders</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar -->
+    <section class="calendar-section" id="booking">
+        <div class="container">
+            <h2>Select Your Appointment</h2>
+            <p>Choose your service, find a time, and book with confidence.</p>
+            
+            <div class="calendar-placeholder">
+                <h3>Your Booking Calendar</h3>
+                <p>Connect your booking system here. Options include:</p>
+                <div class="calendar-options">
+                    <a href="#" class="calendar-option">Book with Calendly</a>
+                    <a href="#" class="calendar-option">Book with Square</a>
+                    <a href="#" class="calendar-option">Book with Acuity</a>
+                    <a href="#" class="calendar-option">Book with Vagaro</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment -->
+    <section class="payment-section">
+        <div class="container">
+            <h2>Payments & Deposits</h2>
+            <div class="payment-content">
+                <div class="payment-grid">
+                    <div class="payment-card">
+                        <h4>💰 Deposit Required</h4>
+                        <p>A small deposit secures your appointment. First-time clients: $30. Returning clients: $20 for standard sessions.</p>
+                    </div>
+                    <div class="payment-card">
+                        <h4>🔒 Secure Checkout</h4>
+                        <p>All payments are processed securely through encrypted connections. We never store your full card details.</p>
+                    </div>
+                    <div class="payment-card">
+                        <h4>💳 Card on File</h4>
+                        <p>We keep a card on file for convenience. It will only be charged for late cancellations or no-shows per our policy.</p>
+                    </div>
+                    <div class="payment-card">
+                        <h4>❓ Cancellations</h4>
+                        <p>24+ hours: Full refund. 12-24 hours: Deposit forfeited. Under 12 hours: Full charge. See our Policies page for details.</p>
+                    </div>
+                </div>
+                <div class="deposit-box">
+                    <h4>Your deposit goes toward your treatment</h4>
+                    <p>The deposit amount is applied to your final bill—you're only paying for your session, not extra fees.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Client Info -->
+    <section class="new-client-section">
+        <div class="container">
+            <h2>New Client Information</h2>
+            <div class="new-client-grid">
+                <div class="new-client-card">
+                    <div class="new-client-icon">📝</div>
+                    <h4>Intake Form</h4>
+                    <p>Complete a brief health form before your first visit. It takes 5 minutes and helps us tailor your session.</p>
+                </div>
+                <div class="new-client-card">
+                    <div class="new-client-icon">🏠</div>
+                    <h4>Arrival</h4>
+                    <p>Arrive 10-15 minutes early. We'll welcome you, show you around, and help you settle in.</p>
+                </div>
+                <div class="new-client-card">
+                    <div class="new-client-icon">🧘</div>
+                    <h4>Preparation</h4>
+                    <p>Wear comfortable clothing. Be hydrated but not full. We'll handle the rest.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Quick Answers</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>Can I reschedule online?</h4>
+                    <p>Yes! Reschedule through your booking confirmation up to 12 hours before. After that, please call or text us.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What is your cancellation policy?</h4>
+                    <p>24+ hours: Full refund. 12-24 hours: Deposit forfeited. Under 12 hours: Full service charge. Please see Policies page.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What should I expect at my first visit?</h4>
+                    <p>Arrive early, complete a brief intake form, meet your therapist, discuss your needs, then enjoy your customized treatment.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Is my payment secure?</h4>
+                    <p>Absolutely. We use encrypted payment processing through trusted booking platforms. Your data is safe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Book?</h2>
+            <p>Your path to relaxation and wellness starts with a single click.</p>
+            <a href="#booking" class="btn-primary">Book Your Appointment</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">Intuitivetouch222</a>
+                    <p>A sanctuary for relaxation and wellness.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="policies.html">Policies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="#">Email Us</a></li>
+                        <li><a href="#">Gift Certificates</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Intuitivetouch222. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

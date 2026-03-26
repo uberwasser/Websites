@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews & Testimonials | Intuitivetouch222</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --ivory: #FAF7F2; --cream: #F5F0E8; --beige: #E8DFD3; --sage: #9CAF88; --sage-dark: #7A9166; --taupe: #A69080; --text-dark: #3D3632; --text-soft: #6B625A; --white: #FFFFFF; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Nunito Sans', sans-serif; background: var(--ivory); color: var(--text-dark); line-height: 1.7; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 500; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        nav { background: var(--white); padding: 20px 0; position: fixed; width: 100%; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.05); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--sage-dark); text-decoration: none; }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { color: var(--text-soft); text-decoration: none; font-size: 15px; }
+        .nav-cta { background: var(--sage); color: var(--white); padding: 10px 24px; border-radius: 30px; text-decoration: none; font-size: 14px; }
+        .btn-primary { background: var(--sage); color: var(--white); padding: 16px 40px; border-radius: 40px; text-decoration: none; font-size: 16px; font-weight: 500; display: inline-block; transition: all 0.3s; }
+        .btn-primary:hover { background: var(--sage-dark); }
+
+        .hero { padding: 180px 0 80px; background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%); text-align: center; }
+        .hero h1 { font-size: 52px; color: var(--text-dark); margin-bottom: 16px; }
+        .hero p { font-size: 20px; color: var(--text-soft); max-width: 600px; margin: 0 auto; }
+
+        section { padding: 80px 0; }
+        section:nth-child(even) { background: var(--white); }
+
+        .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .review-card { background: var(--cream); padding: 40px; border-radius: 24px; }
+        .stars { color: var(--taupe); font-size: 20px; margin-bottom: 16px; }
+        .review-card p { font-size: 16px; color: var(--text-soft); font-style: italic; line-height: 1.8; margin-bottom: 20px; }
+        .review-card .author { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--text-dark); }
+        .review-card .service { font-size: 13px; color: var(--taupe); margin-top: 4px; }
+
+        .trust-section { text-align: center; background: var(--cream); }
+        .trust-section h2 { margin-bottom: 20px; }
+        .trust-section > .container > p { font-size: 18px; color: var(--text-soft); max-width: 700px; margin: 0 auto 40px; }
+        .trust-icons { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; }
+        .trust-item { text-align: center; }
+        .trust-item span { font-size: 36px; display: block; margin-bottom: 8px; }
+        .trust-item p { font-size: 14px; color: var(--text-soft); }
+
+        .cta-section { background: linear-gradient(180deg, var(--sage) 0%, var(--sage-dark) 100%); text-align: center; color: var(--white); padding: 80px 0; }
+        .cta-section h2 { color: var(--white); font-size: 42px; margin-bottom: 16px; }
+        .cta-section p { font-size: 18px; opacity: 0.9; margin-bottom: 30px; }
+        .cta-section .btn-primary { background: var(--white); color: var(--sage-dark); margin-right: 15px; }
+        .cta-section .btn-secondary { background: transparent; border: 2px solid var(--white); color: var(--white); padding: 16px 40px; border-radius: 40px; text-decoration: none; display: inline-block; }
+        .cta-section .btn-secondary:hover { background: var(--white); color: var(--sage-dark); }
+
+        footer { background: var(--text-dark); color: var(--cream); padding: 50px 0 25px; text-align: center; }
+        footer p { opacity: 0.7; font-size: 14px; }
+
+        @media (max-width: 768px) { .reviews-grid { grid-template-columns: 1fr; } .nav-links { display: none; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Intuitivetouch222</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="booking.html">Book</a></li>
+            </ul>
+            <a href="booking.html" class="nav-cta">Book Now</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>What Our Clients Say</h1>
+            <p>Real experiences from our wellness community. Trusted care, genuine results.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"I've never experienced such genuine relaxation. The space is incredibly peaceful and the massage was exactly what I needed. I left feeling completely renewed."</p>
+                    <p class="author">— Sarah M.</p>
+                    <p class="service">Light Touch Massage</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"After months of back pain, I finally found relief. The therapist listened carefully and customized the session to my needs. Highly recommend!"</p>
+                    <p class="author">— James L.</p>
+                    <p class="service">Deep Tissue Massage</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"The Deep Sleep Massage was heavenly. I slept better that night than I have in weeks. It's not just a massage—it's a healing experience."</p>
+                    <p class="author">— Amanda R.</p>
+                    <p class="service">Deep Sleep Massage</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Finally a place that truly understands the importance of personalized care. The booking was easy and the massage was phenomenal. I won't go anywhere else."</p>
+                    <p class="author">— Jennifer K.</p>
+                    <p class="service">Therapeutic Massage</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"I've been to many spas, but this is different. The attention to detail, the calming atmosphere, the skilled hands—everything is top notch."</p>
+                    <p class="author">— Michael T.</p>
+                    <p class="service">Hot Stone Massage</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"This is my go-to for self-care. Whether it's for relaxation or recovery, the team always delivers. I've been coming back for over a year now."</p>
+                    <p class="author">— Rachel S.</p>
+                    <p class="service">Regular Client</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trust-section">
+        <div class="container">
+            <h2>Why Our Clients Trust Us</h2>
+            <p>We don't just aim for good sessions—we strive for transformative experiences. Every visit is an opportunity to support your wellness journey.</p>
+            <div class="trust-icons">
+                <div class="trust-item"><span>🧘</span><p>Personalized Care</p></div>
+                <div class="trust-item"><span>💆</span><p>Professional Therapists</p></div>
+                <div class="trust-item"><span>🕯️</span><p>Calming Space</p></div>
+                <div class="trust-item"><span>⭐</span><p>Consistent Quality</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Experience It Yourself</h2>
+            <p>Join our community of wellness seekers. Your first visit could be the beginning of a healthier, more relaxed you.</p>
+            <a href="booking.html" class="btn-primary">Book Your Session</a>
+            <a href="contact.html" class="btn-secondary">Leave a Review</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Intuitivetouch222. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

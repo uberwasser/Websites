@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Intuitivetouch222</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ivory: #FAF7F2;
+            --cream: #F5F0E8;
+            --beige: #E8DFD3;
+            --sage: #9CAF88;
+            --sage-dark: #7A9166;
+            --taupe: #A69080;
+            --earth: #C4B5A5;
+            --warm-brown: #8B7355;
+            --text-dark: #3D3632;
+            --text-soft: #6B625A;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            background-color: var(--ivory);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--sage-dark);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-soft);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--sage-dark);
+        }
+
+        .nav-cta {
+            background: var(--sage);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: var(--sage-dark);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%);
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 56px;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .page-hero p {
+            font-size: 20px;
+            color: var(--text-soft);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Story Section */
+        .story {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .story-text h2 {
+            font-size: 42px;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+        }
+
+        .story-text p {
+            font-size: 17px;
+            color: var(--text-soft);
+            margin-bottom: 20px;
+            line-height: 1.9;
+        }
+
+        .story-quote {
+            background: var(--cream);
+            padding: 40px;
+            border-radius: 24px;
+            border-left: 4px solid var(--sage);
+        }
+
+        .story-quote p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-style: italic;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        /* Philosophy */
+        .philosophy {
+            padding: 100px 0;
+            background: var(--cream);
+        }
+
+        .philosophy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .philosophy h2 {
+            font-size: 42px;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+        }
+
+        .philosophy-text {
+            font-size: 18px;
+            color: var(--text-soft);
+            line-height: 2;
+        }
+
+        .philosophy-text p {
+            margin-bottom: 24px;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .philosophy-item {
+            text-align: center;
+            padding: 40px 30px;
+            background: var(--white);
+            border-radius: 20px;
+        }
+
+        .philosophy-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .philosophy-item h4 {
+            font-size: 22px;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .philosophy-item p {
+            font-size: 15px;
+            color: var(--text-soft);
+        }
+
+        /* Different Section */
+        .different {
+            padding: 100px 0;
+            background: var(--ivory);
+        }
+
+        .different-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .different h2 {
+            font-size: 42px;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+        }
+
+        .different-list {
+            list-style: none;
+        }
+
+        .different-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .check-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            flex-shrink: 0;
+            font-size: 16px;
+        }
+
+        .different-list h4 {
+            font-size: 20px;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .different-list p {
+            font-size: 15px;
+            color: var(--text-soft);
+        }
+
+        /* Who We Serve */
+        .who-serve {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .who-serve h2 {
+            font-size: 42px;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .who-serve > .container > p {
+            font-size: 18px;
+            color: var(--text-soft);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .serve-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .serve-card {
+            background: var(--cream);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .serve-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .serve-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .serve-card h4 {
+            font-size: 22px;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .serve-card p {
+            font-size: 15px;
+            color: var(--text-soft);
+        }
+
+        /* First Visit */
+        .first-visit {
+            padding: 100px 0;
+            background: linear-gradient(180deg, var(--sage) 0%, var(--sage-dark) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .first-visit h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .first-visit > .container > p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .visit-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .visit-item {
+            text-align: center;
+        }
+
+        .visit-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin: 0 auto 16px;
+        }
+
+        .visit-item h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .visit-item p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .first-visit .cta-text {
+            margin-top: 50px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 48px;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            color: var(--text-soft);
+            max-width: 500px;
+            margin: 0 auto 40px;
+        }
+
+        .btn-primary {
+            background: var(--sage);
+            color: var(--white);
+            padding: 18px 50px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: var(--sage-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--cream);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand .logo {
+            color: var(--cream);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .footer-brand p {
+            font-size: 15px;
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: var(--cream);
+            opacity: 0.7;
+            text-decoration: none;
+            font-size: 15px;
+            transition: opacity 0.3s;
+        }
+
+        .footer-col a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 40px;
+            }
+
+            .story-content,
+            .different-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .philosophy-grid,
+            .serve-grid,
+            .visit-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Intuitivetouch222</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="#booking" class="nav-cta">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- About Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>A Healing Touch, A Restored Spirit</h1>
+            <p>Welcome to a space where wellness meets warmth, and every visit is a step toward greater balance.</p>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <h2>The Heart Behind Intuitivetouch222</h2>
+                    <p>Intuitivetouch222 was created with one simple belief: that healing happens in spaces where you feel truly seen, heard, and cared for.</p>
+                    <p>We understand that massage is more than a service—it is a form of self-care, a way to reclaim your peace, and a practice that supports your body, mind, and spirit.</p>
+                    <p>Our approach is rooted in intentional touch. Every movement, every technique, and every session is designed with your unique needs in mind. We don't believe in one-size-fits-all treatments. Instead, we listen to your body and respond with care that honors where you are today.</p>
+                </div>
+                <div class="story-quote">
+                    <p>"Touch is the language of the heart. When words fall short, hands can heal."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy">
+        <div class="container">
+            <div class="philosophy-content">
+                <h2>Our Philosophy</h2>
+                <div class="philosophy-text">
+                    <p>We believe that true wellness comes from addressing the whole person—not just the symptoms, but the root. Our practice combines therapeutic expertise with a gentle, intuitive approach that honors your body's natural wisdom.</p>
+                    <p>Restoration is not a luxury; it is a necessity. In a world that constantly demands our attention, creating space for stillness is an act of self-love that ripple into every area of your life.</p>
+                </div>
+                <div class="philosophy-grid">
+                    <div class="philosophy-item">
+                        <div class="philosophy-icon">👐</div>
+                        <h4>Intentional Care</h4>
+                        <p>Every touch is purposeful, every session is tailored</p>
+                    </div>
+                    <div class="philosophy-item">
+                        <div class="philosophy-icon">🌱</div>
+                        <h4>Body Awareness</h4>
+                        <p>Helping you reconnect with your body's signals</p>
+                    </div>
+                    <div class="philosophy-item">
+                        <div class="philosophy-icon">🕊️</div>
+                        <h4>Healing Presence</h4>
+                        <p>A calm, nurturing space for deep relaxation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Makes Us Different -->
+    <section class="different">
+        <div class="container">
+            <div class="different-content">
+                <div>
+                    <h2>What Makes Intuitivetouch222 Different</h2>
+                </div>
+                <div>
+                    <ul class="different-list">
+                        <li>
+                            <div class="check-icon">✓</div>
+                            <div>
+                                <h4>Personalized Sessions</h4>
+                                <p>We tailor each visit to your specific needs, not a standard template.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="check-icon">✓</div>
+                            <div>
+                                <h4>Truly Calming Environment</h4>
+                                <p>Our studio is designed as a sanctuary—quiet, clean, and deeply relaxing.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="check-icon">✓</div>
+                            <div>
+                                <h4>Experienced, Caring Hands</h4>
+                                <p>Skilled therapists who genuinely care about your wellness journey.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="check-icon">✓</div>
+                            <div>
+                                <h4>No Rush, No Assembly Line</h4>
+                                <p>We don't rush through sessions. You have our full attention.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="check-icon">✓</div>
+                            <div>
+                                <h4>Whole-Person Approach</h4>
+                                <p>We consider your physical, emotional, and mental state.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Serve -->
+    <section class="who-serve">
+        <div class="container">
+            <h2>Who We Serve</h2>
+            <p>Intuitivetouch222 is here for anyone seeking a deeper level of care.</p>
+            <div class="serve-grid">
+                <div class="serve-card">
+                    <div class="serve-icon">🧘</div>
+                    <h4>Stress Relief Seekers</h4>
+                    <p>Those overwhelmed by life and needing a peaceful escape</p>
+                </div>
+                <div class="serve-card">
+                    <div class="serve-icon">😌</div>
+                    <h4>Relaxation Lovers</h4>
+                    <p>Anyone who values deep rest and calming experiences</p>
+                </div>
+                <div class="serve-card">
+                    <div class="serve-icon">💆</div>
+                    <h4>Therapeutic Bodywork</h4>
+                    <p>Those with specific tension, pain, or recovery needs</p>
+                </div>
+                <div class="serve-card">
+                    <div class="serve-icon">🌙</div>
+                    <h4>Sleep Strugglers</h4>
+                    <p>Anyone hoping to improve rest through bodywork</p>
+                </div>
+                <div class="serve-card">
+                    <div class="serve-icon">🏃</div>
+                    <h4>Recovery & Wellness</h4>
+                    <p>Those supporting their body through active lifestyles</p>
+                </div>
+                <div class="serve-card">
+                    <div class="serve-icon">💜</div>
+                    <h4>Self-Care Champions</h4>
+                    <p>Those who prioritize their health and wellbeing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- First Visit Welcome -->
+    <section class="first-visit">
+        <div class="container">
+            <h2>Your First Visit</h2>
+            <p>We want you to feel completely comfortable from the moment you arrive. Here's what to expect:</p>
+            <div class="visit-grid">
+                <div class="visit-item">
+                    <div class="visit-icon">📋</div>
+                    <h4>Health Conversation</h4>
+                    <p>We discuss your needs, preferences, and any concerns</p>
+                </div>
+                <div class="visit-item">
+                    <div class="visit-icon">👀</div>
+                    <h4>Room Tour</h4>
+                    <p>See our space and settle into the calming environment</p>
+                </div>
+                <div class="visit-item">
+                    <div class="visit-icon">🛏️</div>
+                    <h4>Your Session</h4>
+                    <p>Relax and receive personalized, therapeutic touch</p>
+                </div>
+                <div class="visit-item">
+                    <div class="visit-icon">🍵</div>
+                    <h4>Aftercare</h4>
+                    <p>We share guidance for extending your relief at home</p>
+                </div>
+            </div>
+            <p class="cta-text">Have questions before your visit? We warmly welcome you to reach out.</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Book Your First Visit</h2>
+            <p>Take the first step toward greater relaxation and wellness. We can't wait to welcome you.</p>
+            <a href="#" class="btn-primary">Schedule Appointment</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">Intuitivetouch222</a>
+                    <p>A sanctuary for relaxation and wellness. We look forward to welcoming you.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Light Touch Massage</a></li>
+                        <li><a href="#">Hot Stone Massage</a></li>
+                        <li><a href="#">Deep Tissue</a></li>
+                        <li><a href="#">Reflexology</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="#">Email Us</a></li>
+                        <li><a href="#">Gift Certificates</a></li>
+                        <li><a href="#">Policies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Intuitivetouch222. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
